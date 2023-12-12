@@ -1,0 +1,28 @@
+package cloud.tianai.captcha.core;
+
+import cloud.tianai.captcha.core.common.constant.CaptchaTypeConstant;
+import cloud.tianai.captcha.core.generator.ImageCaptchaGenerator;
+import cloud.tianai.captcha.core.generator.common.model.dto.GenerateParam;
+import cloud.tianai.captcha.core.generator.common.model.dto.ImageCaptchaInfo;
+import cloud.tianai.captcha.core.generator.impl.MultiImageCaptchaGenerator;
+import cloud.tianai.captcha.core.generator.impl.transform.Base64ImageTransform;
+import cloud.tianai.captcha.core.resource.ImageCaptchaResourceManager;
+import cloud.tianai.captcha.core.resource.impl.DefaultImageCaptchaResourceManager;
+
+public class Test3 {
+    public static void main(String[] args) {
+        // 资源管理器
+        ImageCaptchaResourceManager imageCaptchaResourceManager = new DefaultImageCaptchaResourceManager();
+        Base64ImageTransform imageTransform = new Base64ImageTransform();
+        // 标准验证码生成器
+        ImageCaptchaGenerator imageCaptchaGenerator = new MultiImageCaptchaGenerator(imageCaptchaResourceManager,imageTransform).init(true);
+        // 生成 具有混淆的 滑块验证码 (目前只有滑块验证码支持混淆滑块， 旋转验证，滑动还原，点选验证 均不支持混淆功能)
+        ImageCaptchaInfo imageCaptchaInfo = imageCaptchaGenerator.generateCaptchaImage(GenerateParam.builder()
+                .type(CaptchaTypeConstant.SLIDER)
+                .templateFormatName("jpeg")
+                .backgroundFormatName("png")
+                // 是否添加混淆滑块
+                .obfuscate(true)
+                .build());
+    }
+}
