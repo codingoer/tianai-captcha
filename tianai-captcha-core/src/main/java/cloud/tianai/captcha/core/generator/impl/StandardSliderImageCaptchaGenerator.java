@@ -37,6 +37,7 @@ public class StandardSliderImageCaptchaGenerator extends AbstractImageCaptchaGen
      * 默认的resource资源文件路径.
      */
     public static final String DEFAULT_SLIDER_IMAGE_RESOURCE_PATH = "META-INF/cut-image/resource";
+
     /**
      * 默认的template资源文件路径.
      */
@@ -63,16 +64,18 @@ public class StandardSliderImageCaptchaGenerator extends AbstractImageCaptchaGen
     public void doGenerateCaptchaImage(CaptchaTransferData transferData) {
         GenerateParam param = transferData.getParam();
         Boolean obfuscate = param.getObfuscate();
-        ResourceMap templateResource = requiredRandomGetTemplate(param.getType(), param.getTemplateImageTag());
-        Resource resourceImage = requiredRandomGetResource(param.getType(), param.getBackgroundImageTag());
-        BufferedImage background = getResourceImage(resourceImage);
-        BufferedImage fixedTemplate = getTemplateImage(templateResource, TEMPLATE_FIXED_IMAGE_NAME);
-        BufferedImage activeTemplate = getTemplateImage(templateResource, TEMPLATE_ACTIVE_IMAGE_NAME);
+
+        ResourceMap templateResource = super.requiredRandomGetTemplate(param.getType(), param.getTemplateImageTag());
+        Resource resourceImage = super.requiredRandomGetResource(param.getType(), param.getBackgroundImageTag());
+        BufferedImage background = super.getResourceImage(resourceImage);
+        BufferedImage fixedTemplate = super.getTemplateImage(templateResource, TEMPLATE_FIXED_IMAGE_NAME);
+        BufferedImage activeTemplate = super.getTemplateImage(templateResource, TEMPLATE_ACTIVE_IMAGE_NAME);
         BufferedImage maskTemplate = fixedTemplate;
-        Optional<BufferedImage> maskTemplateOptional = getTemplateImageOfOptional(templateResource, TEMPLATE_MASK_IMAGE_NAME);
+        Optional<BufferedImage> maskTemplateOptional = super.getTemplateImageOfOptional(templateResource, TEMPLATE_MASK_IMAGE_NAME);
         if (maskTemplateOptional.isPresent()) {
             maskTemplate = maskTemplateOptional.get();
         }
+
         // 获取随机的 x 和 y 轴
         int randomX = randomInt(fixedTemplate.getWidth() + 5, background.getWidth() - fixedTemplate.getWidth() - 10);
         int randomY = randomInt(background.getHeight() - fixedTemplate.getHeight());
@@ -80,7 +83,7 @@ public class StandardSliderImageCaptchaGenerator extends AbstractImageCaptchaGen
         BufferedImage cutImage = CaptchaImageUtils.cutImage(background, maskTemplate, randomX, randomY);
         CaptchaImageUtils.overlayImage(background, fixedTemplate, randomX, randomY);
         if (obfuscate) {
-            Optional<BufferedImage> obfuscateFixedTemplate = getTemplateImageOfOptional(templateResource, OBFUSCATE_TEMPLATE_FIXED_IMAGE_NAME);
+            Optional<BufferedImage> obfuscateFixedTemplate = super.getTemplateImageOfOptional(templateResource, OBFUSCATE_TEMPLATE_FIXED_IMAGE_NAME);
             BufferedImage obfuscateImage = obfuscateFixedTemplate.orElseGet(() -> createObfuscate(fixedTemplate));
             int obfuscateX = randomObfuscateX(randomX, fixedTemplate.getWidth(), background.getWidth());
             CaptchaImageUtils.overlayImage(background, obfuscateImage, obfuscateX, randomY);

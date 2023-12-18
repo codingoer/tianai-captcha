@@ -28,7 +28,7 @@ public interface ResourceProvider {
     boolean supported(String type);
 
     /**
-     * 放弃资源提供者名称
+     * 获取资源提供者名称
      *
      * @return String
      */

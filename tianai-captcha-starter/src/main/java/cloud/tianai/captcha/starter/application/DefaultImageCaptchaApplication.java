@@ -169,7 +169,7 @@ public class DefaultImageCaptchaApplication implements ImageCaptchaApplication {
      */
     protected void cacheVerification(String id, String type, Map<String, Object> validData) {
         Long expire = prop.getExpire().getOrDefault(type, defaultExpire);
-        if (!getCacheStore().setCache(getKey(id), validData, expire, TimeUnit.MILLISECONDS)) {
+        if (!getCacheStore().setCache(getKey(id), validData, expire, TimeUnit.SECONDS)) {
             log.error("缓存验证码数据失败， id={}, validData={}", id, validData);
             throw new CaptchaValidException(type, "缓存验证码数据失败");
         }

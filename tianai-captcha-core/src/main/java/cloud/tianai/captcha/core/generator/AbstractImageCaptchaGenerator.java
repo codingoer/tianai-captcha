@@ -7,6 +7,7 @@ import cloud.tianai.captcha.core.generator.common.model.dto.CustomData;
 import cloud.tianai.captcha.core.generator.common.model.dto.GenerateParam;
 import cloud.tianai.captcha.core.generator.common.model.dto.ImageCaptchaInfo;
 import cloud.tianai.captcha.core.generator.common.util.CaptchaImageUtils;
+import cloud.tianai.captcha.core.generator.impl.StaticCaptchaPostProcessorManager;
 import cloud.tianai.captcha.core.generator.impl.transform.Base64ImageTransform;
 import cloud.tianai.captcha.core.resource.ImageCaptchaResourceManager;
 import cloud.tianai.captcha.core.resource.common.model.dto.Resource;
@@ -20,11 +21,8 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
-import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static cloud.tianai.captcha.core.generator.impl.StaticCaptchaPostProcessorManager.*;
 
 /**
  * @Author: 天爱有情
@@ -103,19 +101,19 @@ public abstract class AbstractImageCaptchaGenerator implements ImageCaptchaGener
         assertInit();
         CustomData data = new CustomData();
         CaptchaTransferData transferData = CaptchaTransferData.create(data, param);
-        ImageCaptchaInfo imageCaptchaInfo = applyPostProcessorBeforeGenerate(transferData, this);
+        ImageCaptchaInfo imageCaptchaInfo = StaticCaptchaPostProcessorManager.applyPostProcessorBeforeGenerate(transferData, this);
         if (imageCaptchaInfo != null) {
             return imageCaptchaInfo;
         }
-        doGenerateCaptchaImage(transferData);
-        applyPostProcessorBeforeWrapImageCaptchaInfo(transferData, this);
-        imageCaptchaInfo = wrapImageCaptchaInfo(transferData);
-        applyPostProcessorAfterGenerateCaptchaImage(transferData, imageCaptchaInfo, this);
+        this.doGenerateCaptchaImage(transferData);
+        StaticCaptchaPostProcessorManager.applyPostProcessorBeforeWrapImageCaptchaInfo(transferData, this);
+        imageCaptchaInfo = this.wrapImageCaptchaInfo(transferData);
+        StaticCaptchaPostProcessorManager.applyPostProcessorAfterGenerateCaptchaImage(transferData, imageCaptchaInfo, this);
         return imageCaptchaInfo;
     }
 
     public ImageCaptchaInfo wrapImageCaptchaInfo(CaptchaTransferData transferData) {
-        ImageCaptchaInfo imageCaptchaInfo = doWrapImageCaptchaInfo(transferData);
+        ImageCaptchaInfo imageCaptchaInfo = this.doWrapImageCaptchaInfo(transferData);
         imageCaptchaInfo.setData(transferData.getCustomData());
         return imageCaptchaInfo;
     }

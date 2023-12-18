@@ -15,20 +15,21 @@ import java.util.concurrent.ThreadLocalRandom;
  * @Description 默认的资源存储
  */
 public class DefaultResourceStore implements ResourceStore {
+
     private static final String TYPE_TAG_SPLIT_FLAG = "|";
     /**
      * 模板资源.
      */
-    private Map<String, List<ResourceMap>> templateResourceMap = new HashMap<>(2);
+    private final Map<String, List<ResourceMap>> templateResourceMap = new HashMap<>(2);
 
     /**
      * resource.
      */
-    private Map<String, List<Resource>> resourceMap = new HashMap<>(2);
+    private final Map<String, List<Resource>> resourceMap = new HashMap<>(2);
 
     /** 用于检索 type和tag. */
-    private Map<String, List<ResourceMap>> templateResourceTagMap = new HashMap<>(2);
-    private Map<String, List<Resource>> resourceTagMap = new HashMap<>(2);
+    private final Map<String, List<ResourceMap>> templateResourceTagMap = new HashMap<>(2);
+    private final Map<String, List<Resource>> resourceTagMap = new HashMap<>(2);
 
     @Override
     public void addResource(String type, Resource resource) {

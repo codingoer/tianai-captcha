@@ -137,7 +137,7 @@ public class CacheImageCaptchaGenerator implements ImageCaptchaGenerator {
     public ImageCaptchaInfo generateCaptchaImage(String type) {
         GenerateParam generateParam = new GenerateParam();
         generateParam.setType(type);
-        return generateCaptchaImage(generateParam, this.requiredGetCaptcha);
+        return this.generateCaptchaImage(generateParam, this.requiredGetCaptcha);
     }
 
     @SneakyThrows

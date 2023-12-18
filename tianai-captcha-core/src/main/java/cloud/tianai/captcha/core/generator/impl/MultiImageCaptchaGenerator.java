@@ -90,7 +90,7 @@ public class MultiImageCaptchaGenerator extends AbstractImageCaptchaGenerator {
             param.setType(defaultCaptcha);
             type = defaultCaptcha;
         }
-        ImageCaptchaGenerator imageCaptchaGenerator = requireGetCaptchaGenerator(type);
+        ImageCaptchaGenerator imageCaptchaGenerator = this.requireGetCaptchaGenerator(type);
         return imageCaptchaGenerator.generateCaptchaImage(param);
     }
 

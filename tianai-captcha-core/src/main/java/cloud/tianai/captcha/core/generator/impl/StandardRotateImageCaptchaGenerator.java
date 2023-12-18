@@ -63,12 +63,13 @@ public class StandardRotateImageCaptchaGenerator extends AbstractImageCaptchaGen
     public void doGenerateCaptchaImage(CaptchaTransferData transferData) {
         GenerateParam param = transferData.getParam();
         CustomData data = new CustomData();
-        ResourceMap templateResource = requiredRandomGetTemplate(param.getType(), param.getTemplateImageTag());
-        Resource resourceImage = requiredRandomGetResource(param.getType(), param.getBackgroundImageTag());
-        BufferedImage background = getResourceImage(resourceImage);
 
-        BufferedImage fixedTemplate = getTemplateImage(templateResource, TEMPLATE_FIXED_IMAGE_NAME);
-        BufferedImage activeTemplate = getTemplateImage(templateResource, TEMPLATE_ACTIVE_IMAGE_NAME);
+        ResourceMap templateResource = super.requiredRandomGetTemplate(param.getType(), param.getTemplateImageTag());
+        Resource resourceImage = super.requiredRandomGetResource(param.getType(), param.getBackgroundImageTag());
+
+        BufferedImage background = super.getResourceImage(resourceImage);
+        BufferedImage fixedTemplate = super.getTemplateImage(templateResource, TEMPLATE_FIXED_IMAGE_NAME);
+        BufferedImage activeTemplate = super.getTemplateImage(templateResource, TEMPLATE_ACTIVE_IMAGE_NAME);
         BufferedImage maskTemplate = fixedTemplate;
         Optional<BufferedImage> maskTemplateOptional = getTemplateImageOfOptional(templateResource, TEMPLATE_MASK_IMAGE_NAME);
         if (maskTemplateOptional.isPresent()) {
