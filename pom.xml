@@ -9,6 +9,7 @@
     <name>tianai-captcha</name>
     <description>行为验证码</description>
     <url>https://gitee.com/tianai/tianai-captcha</url>
+    <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
@@ -28,6 +29,12 @@
         <!--        <deplay.repository>http://192.168.3.10:6061/repository/smart_hosted/</deplay.repository>-->
         <!--        <deplay.snapshotRepository>http://192.168.3.10:6061/repository/smart_hosted/</deplay.snapshotRepository>-->
     </properties>
+
+    <modules>
+        <module>tianai-captcha-core</module>
+        <module>tianai-captcha-starter</module>
+        <module>tianai-captcha-demo</module>
+    </modules>
 
     <licenses>
         <license>
@@ -58,19 +65,41 @@
         </repository>
     </distributionManagement>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.12</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.30</version>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cloud.tianai.captcha</groupId>
+                <artifactId>tianai-captcha-core</artifactId>
+                <version>1.5.0</version>
+            </dependency>
+            <dependency>
+                <groupId>cloud.tianai.captcha</groupId>
+                <artifactId>tianai-captcha-starter</artifactId>
+                <version>1.5.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>2.6.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.8</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.30</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
