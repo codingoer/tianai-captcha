@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>cloud.tianai.captcha.generator.ImageCaptchaGenerator</OriginalElement>
+  <nodes>
+    <node x="912.5" y="142.0">cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator</node>
+    <node x="573.5" y="64.0">cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator</node>
+    <node x="-133.0" y="142.0">cloud.tianai.captcha.generator.impl.MultiImageCaptchaGenerator</node>
+    <node x="547.5" y="142.0">cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator</node>
+    <node x="1282.5" y="142.0">cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator</node>
+    <node x="886.5" y="64.0">cloud.tianai.captcha.generator.impl.CacheImageCaptchaGenerator</node>
+    <node x="757.5" y="-14.0">cloud.tianai.captcha.generator.ImageCaptchaGenerator</node>
+    <node x="198.5" y="142.0">cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator</node>
+    <node x="-157.0" y="220.0">cloud.tianai.captcha.spring.plugins.SpringMultiImageCaptchaGenerator</node>
+    <node x="177.0" y="220.0">cloud.tianai.captcha.generator.impl.StandardWordClickImageCaptchaGenerator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cloud.tianai.captcha.generator.impl.CacheImageCaptchaGenerator" target="cloud.tianai.captcha.generator.ImageCaptchaGenerator" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1025.0" y="39.0" />
+      <point x="872.5" y="39.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="363.0" y="117.0" />
+      <point x="720.0" y="117.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1452.0" y="117.0" />
+      <point x="720.0" y="117.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.MultiImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="117.0" />
+      <point x="720.0" y="117.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="1087.5" y="117.0" />
+      <point x="720.0" y="117.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" target="cloud.tianai.captcha.generator.ImageCaptchaGenerator" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="720.0" y="39.0" />
+      <point x="872.5" y="39.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardWordClickImageCaptchaGenerator" target="cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.spring.plugins.SpringMultiImageCaptchaGenerator" target="cloud.tianai.captcha.generator.impl.MultiImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6670372429127293" showDependencies="false" x="710.505" y="127.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

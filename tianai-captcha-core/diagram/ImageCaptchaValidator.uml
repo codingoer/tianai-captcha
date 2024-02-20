@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>cloud.tianai.captcha.validator.ImageCaptchaValidator</OriginalElement>
+  <nodes>
+    <node x="170.0" y="-14.0">cloud.tianai.captcha.validator.ImageCaptchaValidator</node>
+    <node x="13.25" y="142.0">cloud.tianai.captcha.validator.impl.BasicCaptchaTrackValidator</node>
+    <node x="-151.0" y="-14.0">cloud.tianai.captcha.validator.SliderCaptchaPercentageValidator</node>
+    <node x="4.75" y="49.0">cloud.tianai.captcha.validator.impl.SimpleImageCaptchaValidator</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cloud.tianai.captcha.validator.impl.SimpleImageCaptchaValidator" target="cloud.tianai.captcha.validator.ImageCaptchaValidator" relationship="REALIZATION">
+      <point x="127.5" y="-14.0" />
+      <point x="-12.75" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.validator.impl.BasicCaptchaTrackValidator" target="cloud.tianai.captcha.validator.impl.SimpleImageCaptchaValidator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.validator.impl.SimpleImageCaptchaValidator" target="cloud.tianai.captcha.validator.SliderCaptchaPercentageValidator" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="140.25" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.5" showDependencies="false" x="129.5" y="88.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

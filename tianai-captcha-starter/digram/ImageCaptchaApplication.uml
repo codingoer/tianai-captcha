@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>cloud.tianai.captcha.spring.application.ImageCaptchaApplication</OriginalElement>
+  <nodes>
+    <node x="772.030505952381" y="-14.0">cloud.tianai.captcha.spring.store.CacheStore</node>
+    <node x="1279.0252976190477" y="74.0">cloud.tianai.captcha.spring.application.FilterImageCaptchaApplication</node>
+    <node x="1402.3058035714287" y="152.0">cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator</node>
+    <node x="-66.0" y="312.0">cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator.XandY</node>
+    <node x="1508.8058035714287" y="312.0">cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator.RotateData</node>
+    <node x="507.78050595238096" y="-14.0">cloud.tianai.captcha.generator.ImageCaptchaGenerator</node>
+    <node x="173.0" y="152.0">cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator</node>
+    <node x="862.0252976190477" y="74.0">cloud.tianai.captcha.spring.application.DefaultImageCaptchaApplication</node>
+    <node x="151.5" y="312.0">cloud.tianai.captcha.generator.impl.StandardWordClickImageCaptchaGenerator</node>
+    <node x="1121.280505952381" y="-14.0">cloud.tianai.captcha.spring.application.ImageCaptchaApplication</node>
+    <node x="552.280505952381" y="202.5">cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator.ImgWrapper</node>
+    <node x="974.4724702380954" y="152.0">cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator</node>
+    <node x="157.0252976190476" y="74.0">cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator</node>
+    <node x="470.0252976190476" y="74.0">cloud.tianai.captcha.spring.store.impl.RedisCacheStore</node>
+    <node x="-186.0" y="152.0">cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator</node>
+    <node x="667.0252976190476" y="74.0">cloud.tianai.captcha.spring.store.impl.LocalCacheStore</node>
+    <node x="1106.9724702380954" y="312.0">cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator.Data</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cloud.tianai.captcha.spring.store.impl.LocalCacheStore" target="cloud.tianai.captcha.spring.store.CacheStore" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="754.5252976190476" y="54.0" />
+      <point x="681.780505952381" y="54.0" />
+      <point x="681.780505952381" y="34.0" />
+      <point x="806.030505952381" y="34.0" />
+      <point x="-34.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.spring.store.impl.RedisCacheStore" target="cloud.tianai.captcha.spring.store.CacheStore" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="558.5252976190476" y="54.0" />
+      <point x="681.780505952381" y="54.0" />
+      <point x="681.780505952381" y="34.0" />
+      <point x="806.030505952381" y="34.0" />
+      <point x="-34.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" target="cloud.tianai.captcha.generator.ImageCaptchaGenerator" relationship="REALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="303.5252976190476" y="44.0" />
+      <point x="565.280505952381" y="44.0" />
+      <point x="-57.5" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator" target="cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator.Data" relationship="CREATE">
+      <point x="-15.0" y="14.0" />
+      <point x="-15.0" y="-14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator.RotateData" target="cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator" relationship="INNER_CLASS">
+      <point x="-15.0" y="-14.0" />
+      <point x="-15.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator.XandY" target="cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator" relationship="INNER_CLASS">
+      <point x="-0.0" y="-14.0" />
+      <point x="-0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.spring.application.FilterImageCaptchaApplication" target="cloud.tianai.captcha.spring.application.ImageCaptchaApplication" relationship="TO_ONE">
+      <point x="69.0" y="-14.0" />
+      <point x="1486.0252976190477" y="44.0" />
+      <point x="1300.530505952381" y="44.0" />
+      <point x="59.75" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.0" />
+      <point x="337.5" y="132.0" />
+      <point x="303.5252976190476" y="132.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.spring.application.FilterImageCaptchaApplication" target="cloud.tianai.captcha.spring.application.ImageCaptchaApplication" relationship="REALIZATION">
+      <point x="-69.0" y="-14.0" />
+      <point x="1348.0252976190477" y="54.0" />
+      <point x="1235.780505952381" y="54.0" />
+      <point x="1235.780505952381" y="44.0" />
+      <point x="1181.030505952381" y="44.0" />
+      <point x="-59.75" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="113.0" y="-14.0" />
+      <point x="96.5" y="132.0" />
+      <point x="303.5252976190476" y="132.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator.ImgWrapper" target="cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator" relationship="INNER_CLASS">
+      <point x="-0.0" y="-14.0" />
+      <point x="622.780505952381" y="166.0" />
+      <point x="164.5" y="-0.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator.Data" target="cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator" relationship="INNER_CLASS">
+      <point x="-0.0" y="-14.0" />
+      <point x="-0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator" target="cloud.tianai.captcha.generator.impl.StandardSliderImageCaptchaGenerator.XandY" relationship="CREATE">
+      <point x="-15.0" y="14.0" />
+      <point x="-15.0" y="-14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardConcatImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="-116.66666666666674" y="-14.0" />
+      <point x="1032.8058035714284" y="132.0" />
+      <point x="303.5252976190476" y="132.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator" target="cloud.tianai.captcha.generator.AbstractImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="-115.0" y="-14.0" />
+      <point x="1459.8058035714287" y="132.0" />
+      <point x="303.5252976190476" y="132.0" />
+      <point x="0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardWordClickImageCaptchaGenerator" target="cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator" relationship="GENERALIZATION">
+      <point x="93.0" y="-14.0" />
+      <point x="430.5" y="286.0" />
+      <point x="378.0" y="286.0" />
+      <point x="378.0" y="206.0" />
+      <point x="419.75" y="206.0" />
+      <point x="82.25" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardWordClickImageCaptchaGenerator" target="cloud.tianai.captcha.generator.impl.AbstractClickImageCaptchaGenerator.ImgWrapper" relationship="CREATE">
+      <point x="186.0" y="-0.0" />
+      <point x="622.780505952381" y="326.0" />
+      <point x="-0.0" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator" target="cloud.tianai.captcha.generator.impl.StandardRotateImageCaptchaGenerator.RotateData" relationship="CREATE">
+      <point x="-0.0" y="14.0" />
+      <point x="-0.0" y="-14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.spring.application.DefaultImageCaptchaApplication" target="cloud.tianai.captcha.spring.application.ImageCaptchaApplication" relationship="REALIZATION">
+      <point x="73.0" y="-14.0" />
+      <point x="1081.0252976190477" y="54.0" />
+      <point x="1235.780505952381" y="54.0" />
+      <point x="1235.780505952381" y="44.0" />
+      <point x="1181.030505952381" y="44.0" />
+      <point x="-59.75" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.spring.application.DefaultImageCaptchaApplication" target="cloud.tianai.captcha.generator.ImageCaptchaGenerator" relationship="TO_ONE">
+      <point x="-73.0" y="-14.0" />
+      <point x="935.0252976190477" y="54.0" />
+      <point x="1028.280505952381" y="54.0" />
+      <point x="1028.280505952381" y="44.0" />
+      <point x="680.280505952381" y="44.0" />
+      <point x="57.5" y="14.0" />
+    </edge>
+    <edge source="cloud.tianai.captcha.spring.application.DefaultImageCaptchaApplication" target="cloud.tianai.captcha.spring.store.CacheStore" relationship="TO_ONE">
+      <point x="-73.0" y="-14.0" />
+      <point x="935.0252976190477" y="54.0" />
+      <point x="1028.280505952381" y="54.0" />
+      <point x="1028.280505952381" y="44.0" />
+      <point x="874.030505952381" y="44.0" />
+      <point x="34.0" y="14.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.6366427840327533" showDependencies="true" x="791.0" y="173.0" />
+  <SelectedNodes>
+    <node>cloud.tianai.captcha.spring.store.impl.LocalCacheStore</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
